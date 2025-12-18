@@ -3,8 +3,9 @@ import 'package:mobile_wedding_invitation/gen/fonts.gen.dart';
 
 class TitleWidget extends StatelessWidget {
   final String title;
+  final bool isEnglish;
 
-  const TitleWidget({super.key, required this.title});
+  const TitleWidget({super.key, required this.title, this.isEnglish = false});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,11 @@ class TitleWidget extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: FontFamily.amaticSC),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: isEnglish ? 50 : 30,
+            fontFamily: isEnglish ? FontFamily.amaticSC : FontFamily.gowunBatang,
+          ),
         ),
       ),
     );

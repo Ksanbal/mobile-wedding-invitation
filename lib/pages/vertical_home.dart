@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_wedding_invitation/widgets/d_day/d_day.dart';
+import 'package:mobile_wedding_invitation/widgets/d_day/d_day_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info_detail.dart';
 
@@ -20,6 +22,9 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
             // Info
             InfoWidget(),
             InfoDetailWidget(),
+            // 디데이
+            DDayWidget(),
+            DDayDetailWidget(),
           ],
         ),
       ),

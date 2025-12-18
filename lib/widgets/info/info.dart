@@ -13,7 +13,7 @@ class InfoWidget extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Assets.images.info.image(width: double.infinity),
-          TitleWidget(title: 'INFO'),
+          TitleWidget(title: 'INFO', isEnglish: true),
         ],
       ),
     );

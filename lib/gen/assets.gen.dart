@@ -14,6 +14,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/d_day.jpg
+  AssetGenImage get dDay => const AssetGenImage('assets/images/d_day.jpg');
+
   /// File path: assets/images/info.jpg
   AssetGenImage get info => const AssetGenImage('assets/images/info.jpg');
 
@@ -21,7 +24,7 @@ class $AssetsImagesGen {
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [info, splash];
+  List<AssetGenImage> get values => [dDay, info, splash];
 }
 
 class Assets {
