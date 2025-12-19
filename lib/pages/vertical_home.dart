@@ -3,6 +3,8 @@ import 'package:mobile_wedding_invitation/widgets/d_day/d_day.dart';
 import 'package:mobile_wedding_invitation/widgets/d_day/d_day_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info_detail.dart';
+import 'package:mobile_wedding_invitation/widgets/location/location.dart';
+import 'package:mobile_wedding_invitation/widgets/location/location_detail.dart';
 
 class VerticalHomeScreen extends StatefulWidget {
   const VerticalHomeScreen({super.key});
@@ -25,6 +27,9 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
             // 디데이
             DDayWidget(),
             DDayDetailWidget(),
+            // 오시는 길
+            LocationWidget(),
+            LocationDetailWidget(),
           ],
         ),
       ),

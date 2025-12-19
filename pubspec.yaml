@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   gap: ^3.0.1
+  flutter_svg: ^2.2.3
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +28,7 @@ flutter:
   assets:
     - assets/images/
     - assets/fonts/
+    - assets/icons/
   fonts:
     - family: AmaticSC
       fonts:
@@ -40,3 +42,7 @@ flutter:
 flutter_gen:
   output: lib/gen/ # 생성된 파일이 저장될 위치
   line_length: 80
+
+  # SVG 패키지와 연동하여 .svg() 메소드를 자동 생성
+  integrations:
+    flutter_svg: true
