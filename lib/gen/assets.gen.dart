@@ -59,6 +59,13 @@ class $AssetsImagesGen {
   /// File path: assets/images/d_day.jpg
   AssetGenImage get dDay => const AssetGenImage('assets/images/d_day.jpg');
 
+  /// File path: assets/images/dinner.png
+  AssetGenImage get dinner => const AssetGenImage('assets/images/dinner.png');
+
+  /// File path: assets/images/dinner_detail.jpg
+  AssetGenImage get dinnerDetail =>
+      const AssetGenImage('assets/images/dinner_detail.jpg');
+
   /// File path: assets/images/gallery.jpg
   AssetGenImage get gallery => const AssetGenImage('assets/images/gallery.jpg');
 
@@ -79,6 +86,8 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
     bride,
     dDay,
+    dinner,
+    dinnerDetail,
     gallery,
     groom,
     info,

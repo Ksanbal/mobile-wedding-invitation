@@ -3,6 +3,8 @@ import 'package:mobile_wedding_invitation/widgets/bride/bride.dart';
 import 'package:mobile_wedding_invitation/widgets/bride/bride_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/d_day/d_day.dart';
 import 'package:mobile_wedding_invitation/widgets/d_day/d_day_detail.dart';
+import 'package:mobile_wedding_invitation/widgets/dinner/dinner.dart';
+import 'package:mobile_wedding_invitation/widgets/dinner/dinner_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/gallery/gallery.dart';
 import 'package:mobile_wedding_invitation/widgets/groom/groom.dart';
 import 'package:mobile_wedding_invitation/widgets/groom/groom_detail.dart';
@@ -43,6 +45,9 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
             BrideDetailWidget(),
             // 갤러리
             GalleryWidget(),
+            // 식사
+            DinnerWidget(),
+            DinnerDetailWidget(),
           ],
         ),
       ),
