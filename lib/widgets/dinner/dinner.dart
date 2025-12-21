@@ -16,7 +16,7 @@ class DinnerWidget extends StatelessWidget {
             aspectRatio: 2 / 3,
             child: Assets.images.dinner.image(fit: BoxFit.cover),
           ),
-          TitleWidget(title: 'INFO', isEnglish: true),
+          TitleWidget(title: '식사'),
         ],
       ),
     );

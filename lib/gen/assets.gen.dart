@@ -79,6 +79,9 @@ class $AssetsImagesGen {
   AssetGenImage get location =>
       const AssetGenImage('assets/images/location.jpg');
 
+  /// File path: assets/images/order.jpg
+  AssetGenImage get order => const AssetGenImage('assets/images/order.jpg');
+
   /// File path: assets/images/splash.jpg
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
 
@@ -92,6 +95,7 @@ class $AssetsImagesGen {
     groom,
     info,
     location,
+    order,
     splash,
   ];
 }

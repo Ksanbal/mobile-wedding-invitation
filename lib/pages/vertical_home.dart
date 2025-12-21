@@ -12,6 +12,8 @@ import 'package:mobile_wedding_invitation/widgets/info/info.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/location/location.dart';
 import 'package:mobile_wedding_invitation/widgets/location/location_detail.dart';
+import 'package:mobile_wedding_invitation/widgets/order/order.dart';
+import 'package:mobile_wedding_invitation/widgets/order/order_detail.dart';
 
 class VerticalHomeScreen extends StatefulWidget {
   const VerticalHomeScreen({super.key});
@@ -48,6 +50,9 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
             // 식사
             DinnerWidget(),
             DinnerDetailWidget(),
+            // 식순
+            OrderWidget(),
+            OrderDetailWidget(),
           ],
         ),
       ),
