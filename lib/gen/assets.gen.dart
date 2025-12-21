@@ -23,21 +23,44 @@ class $AssetsIconsGen {
   /// File path: assets/icons/kakao_map.svg
   SvgGenImage get kakaoMap => const SvgGenImage('assets/icons/kakao_map.svg');
 
+  /// File path: assets/icons/kakaopay.svg
+  SvgGenImage get kakaopay => const SvgGenImage('assets/icons/kakaopay.svg');
+
   /// File path: assets/icons/naver_map.svg
   SvgGenImage get naverMap => const SvgGenImage('assets/icons/naver_map.svg');
 
   /// File path: assets/icons/tmap.svg
   SvgGenImage get tmap => const SvgGenImage('assets/icons/tmap.svg');
 
+  /// File path: assets/icons/toss.svg
+  SvgGenImage get toss => const SvgGenImage('assets/icons/toss.svg');
+
+  /// File path: assets/icons/toss_png.png
+  AssetGenImage get tossPng => const AssetGenImage('assets/icons/toss_png.png');
+
   /// List of all assets
-  List<SvgGenImage> get values => [googleMap, kakaoMap, naverMap, tmap];
+  List<dynamic> get values => [
+    googleMap,
+    kakaoMap,
+    kakaopay,
+    naverMap,
+    tmap,
+    toss,
+    tossPng,
+  ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bride.jpg
+  AssetGenImage get bride => const AssetGenImage('assets/images/bride.jpg');
+
   /// File path: assets/images/d_day.jpg
   AssetGenImage get dDay => const AssetGenImage('assets/images/d_day.jpg');
+
+  /// File path: assets/images/groom.jpg
+  AssetGenImage get groom => const AssetGenImage('assets/images/groom.jpg');
 
   /// File path: assets/images/info.jpg
   AssetGenImage get info => const AssetGenImage('assets/images/info.jpg');
@@ -50,7 +73,14 @@ class $AssetsImagesGen {
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [dDay, info, location, splash];
+  List<AssetGenImage> get values => [
+    bride,
+    dDay,
+    groom,
+    info,
+    location,
+    splash,
+  ];
 }
 
 class Assets {

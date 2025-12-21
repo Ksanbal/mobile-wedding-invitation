@@ -9,7 +9,7 @@ class GaussianBackdropFilterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
         child: Container(color: Colors.black.withValues(alpha: 0.7)),
       ),
     );

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_wedding_invitation/widgets/bride/bride.dart';
+import 'package:mobile_wedding_invitation/widgets/bride/bride_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/d_day/d_day.dart';
 import 'package:mobile_wedding_invitation/widgets/d_day/d_day_detail.dart';
+import 'package:mobile_wedding_invitation/widgets/groom/groom.dart';
+import 'package:mobile_wedding_invitation/widgets/groom/groom_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info.dart';
 import 'package:mobile_wedding_invitation/widgets/info/info_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/location/location.dart';
@@ -30,6 +34,12 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
             // 오시는 길
             LocationWidget(),
             LocationDetailWidget(),
+            // 신랑
+            GroomWidget(),
+            GroomDetailWidget(),
+            // 신부
+            BrideWidget(),
+            BrideDetailWidget(),
           ],
         ),
       ),
