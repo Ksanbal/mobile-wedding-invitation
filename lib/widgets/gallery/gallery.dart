@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/pages/gallery_detail.dart';
-import 'package:mobile_wedding_invitation/widgets/common/title.dart';
+import 'package:mobile_wedding_invitation/widgets/common/title_card.dart';
 
 class GalleryWidget extends StatelessWidget {
   const GalleryWidget({super.key});
@@ -12,18 +12,9 @@ class GalleryWidget extends StatelessWidget {
       onTap: () {
         Navigator.of(
           context,
-        ).pushReplacement(MaterialPageRoute(builder: (context) => const GalleryDetailScreen()));
+        ).push(MaterialPageRoute(builder: (context) => const GalleryDetailScreen()));
       },
-      child: AspectRatio(
-        aspectRatio: 2 / 3,
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            Assets.images.gallery.image(width: double.infinity),
-            TitleWidget(title: '갤러리'),
-          ],
-        ),
-      ),
+      child: TitleCard(image: Assets.images.gallery.provider(), title: '갤러리'),
     );
   }
 }
