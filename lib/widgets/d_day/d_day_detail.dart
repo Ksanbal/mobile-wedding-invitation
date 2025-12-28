@@ -16,29 +16,23 @@ class DDayDetailWidget extends StatelessWidget {
           Assets.images.dDay.image(),
           GaussianBackdropFilterWidget(),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40),
-                child: Text(
-                  "2026.03.14 SAT\n05:00PM",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontFamily: FontFamily.amaticSC,
-                    fontWeight: FontWeight.bold,
-                  ),
+              Text(
+                "2026.03.14 SAT\n05:00PM",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontFamily: FontFamily.amaticSC,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              // [ ] 캘린더 이미지 삽입
-              Expanded(child: Placeholder()),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text("캘린더에 추가하기 🗓️", style: TextStyle(color: Colors.white, fontSize: 16)),
-                ),
+              // [x] 캘린더 이미지 삽입
+              Assets.images.calendar.image(),
+              TextButton(
+                onPressed: () {},
+                child: Text("캘린더에 추가하기 🗓️", style: TextStyle(color: Colors.white, fontSize: 16)),
               ),
             ],
           ),
