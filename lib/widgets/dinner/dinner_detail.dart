@@ -3,6 +3,7 @@ import 'package:mobile_wedding_invitation/core/theme/app_palette.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/gen/fonts.gen.dart';
 import 'package:mobile_wedding_invitation/widgets/common/gaussian_backdropfilter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class DinnerDetailWidget extends StatelessWidget {
   const DinnerDetailWidget({super.key});
@@ -51,7 +52,7 @@ class DinnerDetailWidget extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          // https://www.starcityarthall.com/html/dining.php
+                          launchUrlString('https://www.starcityarthall.com/html/dining.php');
                         },
                         borderRadius: BorderRadius.circular(16),
                         child: Container(

@@ -4,7 +4,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.7.2
 
 dependencies:
   flutter:
@@ -15,6 +15,7 @@ dependencies:
   flutter_svg: ^2.2.3
   url_launcher: ^6.3.2
   flutter_inappwebview: ^6.1.5
+  web: ^1.0.0
 
 dev_dependencies:
   flutter_test:
