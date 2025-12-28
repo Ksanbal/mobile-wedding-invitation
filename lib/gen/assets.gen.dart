@@ -26,8 +26,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/kakaopay.svg
   SvgGenImage get kakaopay => const SvgGenImage('assets/icons/kakaopay.svg');
 
-  /// File path: assets/icons/naver_map.svg
-  SvgGenImage get naverMap => const SvgGenImage('assets/icons/naver_map.svg');
+  /// File path: assets/icons/naver_map.png
+  AssetGenImage get naverMap =>
+      const AssetGenImage('assets/icons/naver_map.png');
 
   /// File path: assets/icons/tmap.svg
   SvgGenImage get tmap => const SvgGenImage('assets/icons/tmap.svg');

@@ -9,7 +9,7 @@ class MoneyCard extends StatelessWidget {
   final String title;
   final String bankName;
   final String bankAccount;
-  final String kakaoCode;
+  final String? kakaoCode;
 
   const MoneyCard({
     super.key,
@@ -100,14 +100,16 @@ class MoneyCard extends StatelessWidget {
                 color: Colors.white,
                 child: Assets.icons.tossPng.image(),
               ),
-              Gap(10),
-              _buildButton(
-                onPressed: () {
-                  launchUrlString('https://qr.kakaopay.com/$kakaoCode');
-                },
-                color: Color(0xffFFE000),
-                child: Assets.icons.kakaopay.svg(),
-              ),
+              if (kakaoCode != null) ...[
+                Gap(10),
+                _buildButton(
+                  onPressed: () {
+                    launchUrlString('https://qr.kakaopay.com/$kakaoCode');
+                  },
+                  color: Color(0xffFFE000),
+                  child: Assets.icons.kakaopay.svg(),
+                ),
+              ],
             ],
           ),
         ],

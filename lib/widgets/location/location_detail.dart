@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:gap/gap.dart';
 import 'package:mobile_wedding_invitation/core/theme/app_palette.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/widgets/common/gaussian_backdropfilter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class LocationDetailWidget extends StatelessWidget {
   final bool showBackground;
@@ -15,22 +18,25 @@ class LocationDetailWidget extends StatelessWidget {
     Color background = Colors.white,
     EdgeInsetsGeometry? padding,
   }) {
-    return Container(
-      width: 60,
-      height: 60,
-      padding: padding ?? EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: background,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.25),
-            blurRadius: 4.0,
-            offset: Offset(0, 4),
-          ),
-        ],
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: 60,
+        height: 60,
+        padding: padding ?? EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: background,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.25),
+              blurRadius: 4.0,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: image,
       ),
-      child: image,
     );
   }
 
@@ -54,7 +60,6 @@ class LocationDetailWidget extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // if (showBackground)
         Positioned.fill(
           child: Assets.images.location.image(
             fit: BoxFit.cover,
@@ -71,7 +76,56 @@ class LocationDetailWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // [ ] 지도
-                AspectRatio(aspectRatio: 1 / 1, child: Placeholder()),
+                AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return InAppWebView(
+                        initialData: InAppWebViewInitialData(
+                          data:
+                              '''
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<title>Kakao 지도 시작하기</title>
+  <script
+    type="text/javascript"
+    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=fa20dc8cd5a4a82965ad85d3fe3a344c"
+  ></script>
+</head>
+<body>
+	<div id="map" style="width:${constraints.maxWidth}px;height:${constraints.maxHeight}px;"></div>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.540893, 127.071495),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+		// 마커 생성
+		var markerPosition = new kakao.maps.LatLng(37.540893, 127.071495);
+		var marker = new kakao.maps.Marker({
+			position: markerPosition
+		});
+		marker.setMap(map);
+	</script>
+</body>
+</html>
+''',
+                        ),
+                        initialSettings: InAppWebViewSettings(
+                          javaScriptEnabled: true,
+                          useHybridComposition: true,
+                          mixedContentMode: MixedContentMode.MIXED_CONTENT_ALWAYS_ALLOW,
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Gap(15),
                 // 주소 안내
                 Row(
@@ -92,8 +146,12 @@ class LocationDetailWidget extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {
-                        // [ ] 클립보드로 주소 복사 기능
+                      onTap: () async {
+                        // [x] 클립보드로 주소 복사 기능
+                        await Clipboard.setData(ClipboardData(text: '서울 광진구 능동로 110 스타시티 영존 5층'));
+                        ScaffoldMessenger.of(
+                          context,
+                        ).showSnackBar(SnackBar(content: Text('복사되었습니다!')));
                       },
                       borderRadius: BorderRadius.circular(16),
                       child: Container(
@@ -129,19 +187,33 @@ class LocationDetailWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    // [ ] 티맵 연동
-                    _buildButtons(onPressed: () {}, image: Assets.icons.tmap.svg()),
-                    // [ ] 네이버지도 연동
-                    _buildButtons(onPressed: () {}, image: Assets.icons.naverMap.svg()),
-                    // [ ] 카카오지도 연동
+                    // [x] 티맵 연동
                     _buildButtons(
-                      onPressed: () {},
+                      onPressed: () {
+                        launchUrlString('tmap://search?name=스타시티아트홀 주차장');
+                      },
+                      image: Assets.icons.tmap.svg(),
+                    ),
+                    // [x] 네이버지도 연동
+                    _buildButtons(
+                      onPressed: () {
+                        launchUrlString('https://map.naver.com/v5/search/스타시티아트홀');
+                      },
+                      image: Assets.icons.naverMap.image(),
+                    ),
+                    // [x] 카카오지도 연동
+                    _buildButtons(
+                      onPressed: () {
+                        launchUrlString('https://map.kakao.com/link/search/스타시티아트홀');
+                      },
                       image: Assets.icons.kakaoMap.svg(),
                       background: Color(0xffFAE100),
                     ),
-                    // [ ] 구글지도 연동
+                    // [x] 구글지도 연동
                     _buildButtons(
-                      onPressed: () {},
+                      onPressed: () {
+                        launchUrlString('https://www.google.com/maps/search/?api=1&query=스타시티아트홀');
+                      },
                       image: Assets.icons.googleMap.svg(),
                       padding: EdgeInsets.all(15),
                     ),
