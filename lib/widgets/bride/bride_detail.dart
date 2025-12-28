@@ -29,21 +29,21 @@ class BrideDetailWidget extends StatelessWidget {
                 children: [
                   MoneyCard(
                     title: '신부 유나영',
-                    bankName: '카카오뱅크',
-                    bankAccount: '3333-03-4142306',
-                    kakaoCode: 'Ej7tLFCbd',
+                    bankName: '신한은행',
+                    bankAccount: '110-574-017860',
+                    kakaoCode: 'FYkyhpFIS',
                   ),
                   MoneyCard(
                     title: '아버지 유명호',
-                    bankName: '카카오뱅크',
-                    bankAccount: '3333-03-4142306',
+                    bankName: '농협은행',
+                    bankAccount: '352-0022-4254-63',
                     kakaoCode: 'Ej7tLFCbd',
                   ),
                   MoneyCard(
                     title: '어머니 김현란',
                     bankName: '카카오뱅크',
-                    bankAccount: '3333-03-4142306',
-                    kakaoCode: 'Ej7tLFCbd',
+                    bankAccount: '3333-04-7143828',
+                    kakaoCode: '281006011000051332746020',
                   ),
                 ],
               ),
