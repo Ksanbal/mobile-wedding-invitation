@@ -7,6 +7,6 @@ class DDayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.dDay.provider(), title: '디데이');
+    return TitleCard(image: Assets.images.dDay, title: 'D-DAY', isEnglish: true);
   }
 }

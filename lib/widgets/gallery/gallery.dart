@@ -14,7 +14,7 @@ class GalleryWidget extends StatelessWidget {
           context,
         ).push(MaterialPageRoute(builder: (context) => const GalleryDetailScreen()));
       },
-      child: TitleCard(image: Assets.images.gallery.provider(), title: '갤러리'),
+      child: TitleCard(image: Assets.images.gallery, title: '갤러리'),
     );
   }
 }

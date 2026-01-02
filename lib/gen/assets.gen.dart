@@ -54,44 +54,41 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/bride.jpg
-  AssetGenImage get bride => const AssetGenImage('assets/images/bride.jpg');
+  /// File path: assets/images/bride.avif
+  String get bride => 'assets/images/bride.avif';
 
-  /// File path: assets/images/calendar.png
-  AssetGenImage get calendar =>
-      const AssetGenImage('assets/images/calendar.png');
+  /// File path: assets/images/calendar.avif
+  String get calendar => 'assets/images/calendar.avif';
 
-  /// File path: assets/images/d_day.jpg
-  AssetGenImage get dDay => const AssetGenImage('assets/images/d_day.jpg');
+  /// File path: assets/images/d_day.avif
+  String get dDay => 'assets/images/d_day.avif';
 
-  /// File path: assets/images/dinner.png
-  AssetGenImage get dinner => const AssetGenImage('assets/images/dinner.png');
+  /// File path: assets/images/dinner.avif
+  String get dinner => 'assets/images/dinner.avif';
 
-  /// File path: assets/images/dinner_detail.jpg
-  AssetGenImage get dinnerDetail =>
-      const AssetGenImage('assets/images/dinner_detail.jpg');
+  /// File path: assets/images/dinner_detail.avif
+  String get dinnerDetail => 'assets/images/dinner_detail.avif';
 
-  /// File path: assets/images/gallery.jpg
-  AssetGenImage get gallery => const AssetGenImage('assets/images/gallery.jpg');
+  /// File path: assets/images/gallery.avif
+  String get gallery => 'assets/images/gallery.avif';
 
-  /// File path: assets/images/groom.jpg
-  AssetGenImage get groom => const AssetGenImage('assets/images/groom.jpg');
+  /// File path: assets/images/groom.avif
+  String get groom => 'assets/images/groom.avif';
 
-  /// File path: assets/images/info.jpg
-  AssetGenImage get info => const AssetGenImage('assets/images/info.jpg');
+  /// File path: assets/images/info.avif
+  String get info => 'assets/images/info.avif';
 
-  /// File path: assets/images/location.jpg
-  AssetGenImage get location =>
-      const AssetGenImage('assets/images/location.jpg');
+  /// File path: assets/images/location.avif
+  String get location => 'assets/images/location.avif';
 
-  /// File path: assets/images/order.jpg
-  AssetGenImage get order => const AssetGenImage('assets/images/order.jpg');
+  /// File path: assets/images/order.avif
+  String get order => 'assets/images/order.avif';
 
-  /// File path: assets/images/splash.jpg
-  AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpg');
+  /// File path: assets/images/splash.avif
+  String get splash => 'assets/images/splash.avif';
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<String> get values => [
     bride,
     calendar,
     dDay,

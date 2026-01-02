@@ -7,6 +7,6 @@ class BrideWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.bride.provider(), title: '유명호 ・ 김현란\n딸 나영');
+    return TitleCard(image: Assets.images.bride, title: '유명호 ・ 김현란\n딸 나영');
   }
 }

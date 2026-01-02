@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:gap/gap.dart';
 import 'package:mobile_wedding_invitation/core/theme/app_palette.dart';
@@ -45,12 +46,7 @@ class LocationDetailWidget extends StatelessWidget {
       style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
       TextSpan(
         text: title,
-        children: [
-          TextSpan(
-            text: description,
-            style: TextStyle(fontWeight: FontWeight.normal),
-          ),
-        ],
+        children: [TextSpan(text: description, style: TextStyle(fontWeight: FontWeight.normal))],
       ),
     );
   }
@@ -61,7 +57,8 @@ class LocationDetailWidget extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Positioned.fill(
-          child: Assets.images.location.image(
+          child: AvifImage.asset(
+            Assets.images.location,
             fit: BoxFit.cover,
             alignment: Alignment.center,
             width: double.infinity,
@@ -82,8 +79,7 @@ class LocationDetailWidget extends StatelessWidget {
                     builder: (context, constraints) {
                       return InAppWebView(
                         initialData: InAppWebViewInitialData(
-                          data:
-                              '''
+                          data: '''
 <!DOCTYPE html>
 <html>
 <head>

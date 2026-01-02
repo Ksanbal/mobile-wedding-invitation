@@ -14,7 +14,7 @@ import 'package:mobile_wedding_invitation/widgets/location/location.dart';
 import 'package:mobile_wedding_invitation/widgets/location/location_detail.dart';
 import 'package:mobile_wedding_invitation/widgets/order/order.dart';
 import 'package:mobile_wedding_invitation/widgets/order/order_detail.dart';
-import 'package:mobile_wedding_invitation/widgets/video/order.dart';
+import 'package:mobile_wedding_invitation/widgets/video/video.dart';
 
 class VerticalHomeScreen extends StatefulWidget {
   const VerticalHomeScreen({super.key});
@@ -27,35 +27,66 @@ class _VerticalHomeScreenState extends State<VerticalHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        children: [
-          // Info
-          InfoWidget(),
-          InfoDetailWidget(),
-          // 디데이
-          DDayWidget(),
-          DDayDetailWidget(),
-          // 오시는 길
-          LocationWidget(),
-          LocationDetailWidget(),
-          // 신랑
-          GroomWidget(),
-          GroomDetailWidget(),
-          // 신부
-          BrideWidget(),
-          BrideDetailWidget(),
-          // 갤러리
-          GalleryWidget(),
-          // 식사
-          DinnerWidget(),
-          DinnerDetailWidget(),
-          // 식순
-          OrderWidget(),
-          OrderDetailWidget(),
-          // 식전영상
-          VideoWidget(),
-        ],
+      // body: PageView(
+      //   scrollDirection: Axis.vertical,
+      //   children: [
+      //     // Info
+      //     InfoWidget(),
+      //     InfoDetailWidget(),
+      //     // 디데이
+      //     DDayWidget(),
+      //     DDayDetailWidget(),
+      //     // 오시는 길
+      //     LocationWidget(),
+      //     LocationDetailWidget(),
+      //     // 신랑
+      //     GroomWidget(),
+      //     GroomDetailWidget(),
+      //     // 신부
+      //     BrideWidget(),
+      //     BrideDetailWidget(),
+      //     // 갤러리
+      //     GalleryWidget(),
+      //     // 식사
+      //     DinnerWidget(),
+      //     DinnerDetailWidget(),
+      //     // 식순
+      //     OrderWidget(),
+      //     OrderDetailWidget(),
+      //     // 식전영상
+      //     VideoWidget(),
+      //   ],
+      // ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Info
+            InfoWidget(),
+            InfoDetailWidget(),
+            // 디데이
+            DDayWidget(),
+            DDayDetailWidget(),
+            // 오시는 길
+            LocationWidget(),
+            LocationDetailWidget(),
+            // 신랑
+            GroomWidget(),
+            GroomDetailWidget(),
+            // 신부
+            BrideWidget(),
+            BrideDetailWidget(),
+            // 갤러리
+            GalleryWidget(),
+            // 식사
+            DinnerWidget(),
+            DinnerDetailWidget(),
+            // 식순
+            OrderWidget(),
+            OrderDetailWidget(),
+            // 식전영상
+            VideoWidget(),
+          ],
+        ),
       ),
     );
   }

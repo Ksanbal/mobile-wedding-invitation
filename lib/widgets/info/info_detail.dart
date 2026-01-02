@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:gap/gap.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/widgets/common/gaussian_backdropfilter.dart';
@@ -9,11 +10,11 @@ class InfoDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Assets.images.info.image(),
+          AvifImage.asset(Assets.images.info),
           GaussianBackdropFilterWidget(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,10 +46,7 @@ class InfoDetailWidget extends StatelessWidget {
                   text: "Bride",
                   style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                   children: [
-                    TextSpan(
-                      text: "\nYu NaYoung",
-                      style: TextStyle(fontWeight: FontWeight.normal),
-                    ),
+                    TextSpan(text: "\nYu NaYoung", style: TextStyle(fontWeight: FontWeight.normal)),
                   ],
                 ),
               ),

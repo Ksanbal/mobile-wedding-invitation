@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/gen/fonts.gen.dart';
 import 'package:mobile_wedding_invitation/services/calendar_service.dart';
@@ -10,11 +11,11 @@ class DDayDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Assets.images.dDay.image(),
+          AvifImage.asset(Assets.images.dDay),
           GaussianBackdropFilterWidget(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,7 +31,7 @@ class DDayDetailWidget extends StatelessWidget {
                 ),
               ),
               // [x] 캘린더 이미지 삽입
-              Assets.images.calendar.image(),
+              AvifImage.asset(Assets.images.calendar),
               TextButton(
                 onPressed: () async {
                   final scaffoldMessenger = ScaffoldMessenger.of(context);

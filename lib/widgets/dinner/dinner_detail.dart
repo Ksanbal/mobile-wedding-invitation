@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:mobile_wedding_invitation/core/theme/app_palette.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/gen/fonts.gen.dart';
@@ -11,13 +12,13 @@ class DinnerDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
       child: Stack(
         alignment: Alignment.center,
         children: [
           AspectRatio(
             aspectRatio: 2 / 3,
-            child: Assets.images.dinner.image(fit: BoxFit.cover),
+            child: AvifImage.asset(Assets.images.dinner, fit: BoxFit.cover),
           ),
           GaussianBackdropFilterWidget(),
           Padding(
@@ -43,7 +44,7 @@ class DinnerDetailWidget extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadiusGeometry.circular(8),
-                        child: Assets.images.dinnerDetail.image(),
+                        child: AvifImage.asset(Assets.images.dinnerDetail),
                       ),
                       Text(
                         "갈비탕 한상차림과 70가지 세미뷔페가 제공됩니다\n맥주, 와인 디스펜서도 있으니 다양하게 즐겨주세요",

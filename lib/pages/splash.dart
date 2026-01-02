@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:mobile_wedding_invitation/core/theme/app_palette.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/gen/fonts.gen.dart';
@@ -26,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
             return Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Assets.images.splash.image(
+                AvifImage.asset(
+                  Assets.images.splash,
                   fit: BoxFit.cover,
                   width: constraints.maxWidth,
                   height: constraints.maxHeight,

@@ -7,6 +7,6 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.info.provider(), title: 'INFO', isEnglish: true);
+    return TitleCard(image: Assets.images.info, title: 'INFO', isEnglish: true);
   }
 }

@@ -7,6 +7,6 @@ class LocationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.location.provider(), title: '오시는 길');
+    return TitleCard(image: Assets.images.location, title: '오시는 길');
   }
 }

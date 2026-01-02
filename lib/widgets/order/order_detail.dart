@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:mobile_wedding_invitation/gen/assets.gen.dart';
 import 'package:mobile_wedding_invitation/widgets/common/gaussian_backdropfilter.dart';
 
@@ -8,11 +9,11 @@ class OrderDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Assets.images.order.image(),
+          AvifImage.asset(Assets.images.order),
           GaussianBackdropFilterWidget(),
           Padding(
             padding: const EdgeInsets.all(20.0),

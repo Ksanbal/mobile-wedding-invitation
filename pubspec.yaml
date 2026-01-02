@@ -16,6 +16,7 @@ dependencies:
   url_launcher: ^6.3.2
   flutter_inappwebview: ^6.1.5
   web: ^1.0.0
+  flutter_avif: ^3.1.0
 
 dev_dependencies:
   flutter_test:

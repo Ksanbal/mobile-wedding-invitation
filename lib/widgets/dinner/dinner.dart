@@ -7,6 +7,6 @@ class DinnerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.dinner.provider(), title: '식사');
+    return TitleCard(image: Assets.images.dinner, title: '식사');
   }
 }

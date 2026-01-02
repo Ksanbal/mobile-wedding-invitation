@@ -7,6 +7,6 @@ class GroomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.groom.provider(), title: '김병구 ・ 정은희\n아들 현균');
+    return TitleCard(image: Assets.images.groom, title: '김병구 ・ 정은희\n아들 현균');
   }
 }

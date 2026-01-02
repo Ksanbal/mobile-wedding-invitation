@@ -7,6 +7,6 @@ class OrderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TitleCard(image: Assets.images.order.provider(), title: '식순');
+    return TitleCard(image: Assets.images.order, title: '식순');
   }
 }
