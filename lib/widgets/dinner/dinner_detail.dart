@@ -12,7 +12,7 @@ class DinnerDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
+      aspectRatio: 2 / 3,
       child: Stack(
         alignment: Alignment.center,
         children: [

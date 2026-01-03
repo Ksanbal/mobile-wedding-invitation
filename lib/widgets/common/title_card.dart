@@ -11,32 +11,29 @@ class TitleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(image: AvifImage.asset(image).image, fit: BoxFit.cover),
-        ),
-        child: Align(
-          alignment: AlignmentGeometry.bottomCenter,
-          child: Container(
-            height: 150,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.transparent, Colors.black.withValues(alpha: 0.5)],
-              ),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AvifImage.asset(image).image, fit: BoxFit.cover),
+      ),
+      child: Align(
+        alignment: AlignmentGeometry.bottomCenter,
+        child: Container(
+          height: 150,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.transparent, Colors.black.withValues(alpha: 0.5)],
             ),
-            child: Center(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: isEnglish ? 50 : 25,
-                  fontFamily: isEnglish ? FontFamily.amaticSC : FontFamily.gowunBatang,
-                ),
+          ),
+          child: Center(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: isEnglish ? 50 : 25,
+                fontFamily: isEnglish ? FontFamily.amaticSC : FontFamily.gowunBatang,
               ),
             ),
           ),

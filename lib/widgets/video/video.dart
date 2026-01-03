@@ -6,9 +6,6 @@ class VideoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
-      child: TitleWidget(title: '식전영상\nComming soon'),
-    );
+    return AspectRatio(aspectRatio: 2 / 3, child: TitleWidget(title: '식전영상\nComming soon'));
   }
 }
